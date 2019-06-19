@@ -19,7 +19,8 @@ from oauth2client.client import FlowExchangeError
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
-engine = create_engine('sqlite:///catalog.db')
+# ://username:passwd@server/dbName
+engine = create_engine('postgresql+psycopg2://catalog:123456@localhost/catalogdb')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -614,6 +615,5 @@ def deleteRentability(category_id, item_id, rentability_id):
 
 
 if __name__ == '__main__':
-    app.secret_key = 'super_secret_key'
     app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+    app.run()

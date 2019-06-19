@@ -118,6 +118,7 @@ class Rentability(Base):
         }
 
 # Create an instance of our create_engine class and point a DB to use
-engine = create_engine('sqlite:///catalog.db')
+# ://username:passwd@server/dbName
+engine = create_engine('postgresql+psycopg2://catalog:123456@localhost/catalogdb')
 # Goes to the DB and adds classes we will soon create
 Base.metadata.create_all(engine)
