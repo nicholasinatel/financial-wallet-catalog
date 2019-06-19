@@ -186,6 +186,8 @@ def fbconnect():
     # Exchange client token for long-lived server-side token with
     # GET /oauth/acces_token?grant_type=fb_exchange_token&client_id=
     # {app-id}&client_secret={app-secret}&fb_exchange_token={short-lived-token}
+    #  with app.open_resource('fb_client_secrets.json') as f:
+    #     app_id = json.load(f)['web']['app_id']
     app_id = json.loads(open('fb_client_secrets.json', 'r').read())[
         'web']['app_id']
     app_secret = json.loads(open('fb_client_secrets.json', 'r').read())[

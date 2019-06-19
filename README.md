@@ -1,13 +1,12 @@
-# Udacity-Catalog-Project
+# Udacity-Linux-Deploy-Project
 
 Visit my Portfolio at: [nicklobo](http://nicklobo.com.br/)
 
 # What it is
-Application that provides a list of items within a variety of categories, third-party user registration and authentication system.
-Registered users have the ability to post, edit, and delete their own items.
+Flask web application deployed to AWS using Lightsail.
 
 Technologies used:
-- [SQLite](https://www.sqlite.org/index.html) - SQL database engine.
+- [Postgres](https://www.postgresql.org/) - SQL database engine.
 - [SQLAlchemy](https://www.sqlalchemy.org/) - Python SQL toolkit and Object Relational Mapper.
 - [Flask](http://flask.pocoo.org/) - microframework for Python.
 - [New Google Sign-in](https://developers.google.com/identity/sign-in/web/)
@@ -15,64 +14,36 @@ Technologies used:
 - [Facebook for developers](https://developers.facebook.com/docs/facebook-login/web) - Login with facebook.
 
 Tools:
-- [VirtualBox](https://www.virtualbox.org/) - x86 and AMD64/Intel64 virtualization.
-- [Vagrant](https://www.vagrantup.com/) - Tool for building and managing virtual machine environments in a single workflow.
+- [Lightsail](https://aws.amazon.com/lightsail/) - AWS Lightsail
+
 
 ## Table of Contents
-- [What it is](https://github.com/nicholasinatel/fullstack-nanodegree-vm/tree/master/vagrant/catalog/#what-it-is)
-- [Dependencies](https://github.com/nicholasinatel/fullstack-nanodegree-vm/tree/master/vagrant/catalog/#dependencies)
-- [Configuration](https://github.com/nicholasinatel/fullstack-nanodegree-vm/tree/master/vagrant/catalog/#configuration)
-- [Run](https://github.com/nicholasinatel/fullstack-nanodegree-vm/tree/master/vagrant/catalog/#run)
-- [JSON_Routes](https://github.com/nicholasinatel/fullstack-nanodegree-vm/tree/master/vagrant/catalog/#json_routes)
-- [Details](https://github.com/nicholasinatel/fullstack-nanodegree-vm/tree/master/vagrant/catalog/#details)
-- [License](https://github.com/nicholasinatel/fullstack-nanodegree-vm/tree/master/vagrant/catalog/#license)
+- [What it is](https://github.com/nicholasinatel/financial-wallet-catalog/#what-it-is)
+- [Reviewer](https://github.com/nicholasinatel/financial-wallet-catalog/#reviewer)
+- [Configuration](https://github.com/nicholasinatel/financial-wallet-catalog/#configuration)
+- [Details](https://github.com/nicholasinatel/financial-wallet-catalog/#details)
+- [License](https://github.com/nicholasinatel/financial-wallet-catalog/#license)
 
-## Dependencies
-Install the following softwares
-- [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - Install the platform package for your operating system. There is no need for installing the extension pack or the SDK. Do not launch Virtual Box, the Vagrant software will run it.
-- [Vagrant](https://www.vagrantup.com/downloads.html) - Download the version of your operating system.
-
-After downloading the software’s, git clone the virtual machine configuration at your work station:
-- [catalog](https://github.com/nicholasinatel/fullstack-nanodegree-vm/) - This will give you a folder, containing the VM files.
-
+## Reviewer
+- IP: 34.202.26.193
+- SSH_PORT: 2200
+- [SSH_KEY_PAIR](https://drive.google.com/open?id=1GJA2_ybTKei0H2kw1FAQ06DA39x1T7AV): Download the key pair 
 
 ## Configuration
-1 - **Start the virtual machine** by going to the cloned folder and executing `vagrant up` inside the vagrant directory, once the command finishes running, type `vagrant ssh`
-
-2 - **Inside the vagrant environment**, run `cd /vagrant/catalog` for the shared folder with access to the Virtual Machine, your current OS and the project files.
-
-In case of problems do step 3.
-
-3 - Delete the file `catalog.db` and execute `python populateDb.py`.
-
-
-# Run
-
-1- Execute `python application.py`. If everything is fine, than go to `localhost:5000/`, you should see the initial screen of the web app. If you dont execute the step 3 at configuration and than try this procedure again.
-
-## JSON_Routes
+Enter the Server by:
 
 ```
-# Show all Categories
-http:localhost:5000/category/JSON
-
-# Show itens
-http:localhost:5000/category/<int:category_id>/JSON
-http:localhost:5000/category/<int:category_id>/item/JSON
-
-# Show Single item
-http:localhost:5000/category/<int:category_id>/item/JSON
-http:localhost:5000/category/<int:category_id>/item/<int:item_id>/JSON
-
-# Show Rentability
-http:localhost:5000/category/<int:category_id>/item/<int:item_id>/rentability/JSON
-
-# Show Single Rentability
-http:localhost:5000/category/<int:category_id>/item/<int:item_id>/rentability/<int:rentability_id>/JSON
+ssh grader@34.202.26.193 -p 2200 -i <grader-udacity.perm>
 ```
 
 ## Details
-If you are not looged in, you will see the default demonstration user data.
+I have changed the default SSH port from 22 to 2200, created a username: grader so the reviewer can access my application and evaluate. There is a special key pair also for this user created throw ssh-keygen.
+Project originally made with SQLite and now modified to Postgres.
+Configured and enabled Ubuntu Firewall to only accept, ssh(2200), http(80) and 123/UDP incomming connections and any outgoing connections.
+Postgres is configured to only accept local connections.
+
+Could not figure out how to use xip.io.
+I think the service may not be working anymore.
 
 ## License
 MIT License
