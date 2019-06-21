@@ -36,14 +36,21 @@ Enter the Server by:
 ssh grader@34.202.26.193 -p 2200 -i <grader-udacity.perm>
 ```
 
-## Details
-I have changed the default SSH port from 22 to 2200, created a username: grader so the reviewer can access my application and evaluate. There is a special key pair also for this user created throw ssh-keygen.
-Project originally made with SQLite and now modified to Postgres.
-Configured and enabled Ubuntu Firewall to only accept, ssh(2200), http(80) and 123/UDP incomming connections and any outgoing connections.
-Postgres is configured to only accept local connections.
+## Summary
+Configurations made:
+- I have changed the default SSH port from 22 to 2200
+- Created a username: grader so the reviewer can access my application and evaluate. 
+- There is a special key pair also for this user created throw ssh-keygen.
+- Configured and enabled Ubuntu Firewall to only accept, ssh(2200), http(80) and 123/UDP incomming connections and any outgoing connections.
+- Postgres is configured to only accept local connections.
 
-Could not figure out how to use xip.io.
-I think the service may not be working anymore.
+## Third-party resources
+- Amazon Web Services Lightsail with Ubuntu 16 LTS configured.
+- Used Winscp to upload files.
+- Used Github to deploy as well.
+- Used finger to manage users in ubuntu.
+- Used Apache, WSGI, pip to install and deploy online the web application.
+- Web application originally developed with SQLite and now modified to Postgres.
 
 ## License
 MIT License
