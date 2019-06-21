@@ -21,7 +21,8 @@ Tools:
 - [What it is](https://github.com/nicholasinatel/financial-wallet-catalog/#what-it-is)
 - [Reviewer](https://github.com/nicholasinatel/financial-wallet-catalog/#reviewer)
 - [Configuration](https://github.com/nicholasinatel/financial-wallet-catalog/#configuration)
-- [Details](https://github.com/nicholasinatel/financial-wallet-catalog/#details)
+- [Summary](https://github.com/nicholasinatel/financial-wallet-catalog/#summary)
+- [Third-party](https://github.com/nicholasinatel/financial-wallet-catalog/#third-party)
 - [License](https://github.com/nicholasinatel/financial-wallet-catalog/#license)
 
 ## Reviewer
@@ -44,7 +45,7 @@ Configurations made:
 - Configured and enabled Ubuntu Firewall to only accept, ssh(2200), http(80) and 123/UDP incomming connections and any outgoing connections.
 - Postgres is configured to only accept local connections.
 
-## Third-party resources
+## Third-party 
 - Amazon Web Services Lightsail with Ubuntu 16 LTS configured.
 - Used Winscp to upload files.
 - Used Github to deploy as well.
